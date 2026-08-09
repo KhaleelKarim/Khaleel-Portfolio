@@ -7,29 +7,26 @@ interface SocialInterface {
   link: string;
 }
 
+// These become the icons in the footer at the bottom of every page.
+// To remove one, delete its block. To add one, copy a block and pick an
+// icon from components/common/icons.tsx.
 export const SocialLinks: SocialInterface[] = [
   {
     name: "Github",
-    username: "@namanbarkiya",
+    username: "@KhaleelKarim",
     icon: Icons.gitHub,
-    link: "https://github.com/namanbarkiya",
+    link: "https://github.com/KhaleelKarim",
   },
   {
     name: "LinkedIn",
-    username: "Naman Barkiya",
+    username: "Khaleel Karim",
     icon: Icons.linkedin,
-    link: "https://www.linkedin.com/in/namanbarkiya",
-  },
-  {
-    name: "Twitter",
-    username: "@namanbarkiya",
-    icon: Icons.twitter,
-    link: "https://twitter.com/namanbarkiya",
+    link: "https://www.linkedin.com/in/khaleel-karim-9a08a5308/",
   },
   {
     name: "Gmail",
-    username: "naman.barkiya02",
+    username: "1khaleelkarim@gmail.com",
     icon: Icons.gmail,
-    link: "mailto:naman.barkiya02@gmail.com",
+    link: "mailto:1khaleelkarim@gmail.com",
   },
 ];

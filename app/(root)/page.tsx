@@ -3,37 +3,31 @@ import Image from "next/image";
 import Link from "next/link";
 import Script from "next/script";
 
-import BlogCard from "@/components/blogs/blog-card";
 import { AnimatedSection } from "@/components/common/animated-section";
 import { AnimatedText } from "@/components/common/animated-text";
 import { ClientPageWrapper } from "@/components/common/client-page-wrapper";
 import { Icons } from "@/components/common/icons";
-import ContributionCard from "@/components/contributions/contribution-card";
 import ExperienceCard from "@/components/experience/experience-card";
 import ProjectCard from "@/components/projects/project-card";
 import SkillsCard from "@/components/skills/skills-card";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { featuredContributions } from "@/config/contributions";
 import { experiences } from "@/config/experience";
 import { pagesConfig } from "@/config/pages";
 import { featuredProjects } from "@/config/projects";
 import { siteConfig } from "@/config/site";
 import { featuredSkills } from "@/config/skills";
-import { getFeaturedBlogs } from "@/lib/blogs";
 import { cn } from "@/lib/utils";
 import profileImg from "@/public/profile-img.jpg";
 
 export const metadata: Metadata = {
   title: `${pagesConfig.home.metadata.title}`,
-  description:
-    "Naman Barkiya - Applied AI Engineer working at the intersection of AI, data, and scalable software systems. Explore my projects, experience, and contributions.",
+  description: siteConfig.description,
   alternates: {
     canonical: siteConfig.url,
   },
 };
 
 export default function IndexPage() {
-  const featuredBlogs = getFeaturedBlogs();
   // Structured data for personal portfolio
   const personSchema = {
     "@context": "https://schema.org",
@@ -41,27 +35,8 @@ export default function IndexPage() {
     name: siteConfig.authorName,
     url: siteConfig.url,
     image: siteConfig.ogImage,
-    jobTitle: "Applied AI Engineer",
-    sameAs: [siteConfig.links.github, siteConfig.links.twitter],
-  };
-
-  // Structured data for website as a software application (template)
-  const softwareSchema = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: "Next.js Portfolio Template",
-    applicationCategory: "DeveloperApplication",
-    operatingSystem: "Web",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-    },
-    author: {
-      "@type": "Person",
-      name: siteConfig.authorName,
-      url: siteConfig.url,
-    },
+    jobTitle: "Data Scientist",
+    sameAs: [siteConfig.links.github, siteConfig.links.linkedin],
   };
 
   return (
@@ -71,41 +46,69 @@ export default function IndexPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
       />
-      <Script
-        id="schema-software"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
-      />
 
       <section className="space-y-6 pb-8 pt-6 mb-0 md:pb-12 md:py-20 lg:py-32 h-screen flex items-center">
         <div className="container flex max-w-[64rem] flex-col items-center gap-4 text-center -mt-20">
-          <Image
-            src={profileImg}
-            height={100}
-            width={100}
-            sizes="100vw"
-            className="bg-primary rounded-full mb-0 h-auto md:mb-2 w-[60%] max-w-[16rem] border-8 border-primary"
-            alt="Naman Barkiya - Applied AI Engineer Portfolio"
-            priority
-          />
+          {/* ── HERO PHOTO ──────────────────────────────────────────────
+              Three dials, all in the `style` block below.
+
+                ZOOM       scale(1.15)      1 = fit, 1.4 = 40% closer
+                LEFT/RIGHT translateX(0%)   negative = image moves left,
+                                            revealing more of its right side
+                UP/DOWN    objectPosition   2nd value; smaller = higher up
+
+              Why left/right uses translateX instead of objectPosition:
+              the photo is 1200x1600 (portrait) in a square frame, so
+              object-fit leaves vertical slack to slide but no horizontal
+              slack at all. translateX shifts the image itself, but only
+              has room to move once scale() is above 1.
+
+              Safe translateX range is roughly +/- (scale-1) / (2*scale):
+              at scale(1.15) that's about 6.5% before a blank edge shows.
+
+              All plain CSS, so they're editable live in devtools: inspect
+              the photo, find `element.style` at the top of the Styles
+              pane, click a number, and hold the up/down arrow keys.
+
+              Frame size is max-w-[16rem] on the wrapper div.
+              ──────────────────────────────────────────────────────────── */}
+          <div className="relative mb-0 md:mb-2 w-[60%] max-w-[16rem] aspect-square overflow-hidden rounded-full border-8 border-primary bg-primary">
+            <Image
+              src={profileImg}
+              alt={`${siteConfig.authorName} - Data Scientist Portfolio`}
+              fill
+              sizes="(max-width: 768px) 60vw, 16rem"
+              priority
+              className="object-cover"
+              style={{
+                transform: "scale(2) translateX(-1%)",
+                objectPosition: "50% 30%",
+              }}
+            />
+          </div>
           <AnimatedText
             as="h1"
             delay={0.2}
             className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl"
           >
-            Naman Barkiya
+            {siteConfig.authorName}
           </AnimatedText>
           <AnimatedText
             as="h3"
             delay={0.4}
             className="font-heading text-base sm:text-xl md:text-xl lg:text-2xl"
           >
-            Applied AI Engineer
+            Data Scientist
           </AnimatedText>
           <div className="mt-4 max-w-[42rem] text-center">
             <p className="leading-normal text-muted-foreground text-sm sm:text-base">
-              Software engineer working at the intersection of AI, data, and
-              scalable software systems.
+              {/* TODO: this is drawn from your resume summary — rewrite it in
+                  your own voice if it doesn't sound like you. */}
+              B.S. Data Science at UC San Diego, with a foundation in machine
+              learning and statistical modeling. I&#39;ve built SQL pipelines
+              over 200K+ records, run millions of simulations in minutes, and
+              applied transformer and LSTM architectures to open research
+              questions.
             </p>
           </div>
 
@@ -130,7 +133,7 @@ export default function IndexPage() {
                     size: "lg",
                   })
                 )}
-                aria-label="Contact Naman Barkiya"
+                aria-label={`Contact ${siteConfig.authorName}`}
               >
                 <Icons.contact className="w-4 h-4 mr-2" /> Contact
               </Link>
@@ -216,75 +219,6 @@ export default function IndexPage() {
         </div>
         <AnimatedText delay={0.4} className="flex justify-center">
           <Link href="/experience">
-            <Button variant={"outline"} className="rounded-xl">
-              <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
-            </Button>
-          </Link>
-        </AnimatedText>
-      </AnimatedSection>
-      <AnimatedSection
-        direction="up"
-        className="container space-y-6 bg-muted py-10 my-14"
-        id="contributions"
-      >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-          <AnimatedText
-            as="h2"
-            className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl"
-          >
-            {pagesConfig.contributions.title}
-          </AnimatedText>
-          <AnimatedText
-            as="p"
-            delay={0.2}
-            className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7"
-          >
-            {pagesConfig.contributions.description}
-          </AnimatedText>
-        </div>
-        <ContributionCard contributions={featuredContributions} />
-        <AnimatedText delay={0.4} className="flex justify-center">
-          <Link href="/contributions">
-            <Button variant={"outline"} className="rounded-xl">
-              <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
-            </Button>
-          </Link>
-        </AnimatedText>
-      </AnimatedSection>
-      <AnimatedSection
-        direction="up"
-        className="container space-y-6 py-10 my-14"
-        id="blogs"
-      >
-        <div className="mx-auto flex max-w-[58rem] flex-col items-center space-y-4 text-center">
-          <AnimatedText
-            as="h2"
-            className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl"
-          >
-            {pagesConfig.blogs.title}
-          </AnimatedText>
-          <AnimatedText
-            as="p"
-            delay={0.2}
-            className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7"
-          >
-            {pagesConfig.blogs.description}
-          </AnimatedText>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full items-stretch">
-          {featuredBlogs.map((blog, index) => (
-            <AnimatedSection
-              key={blog.slug}
-              delay={0.1 * (index + 1)}
-              direction="up"
-              className="h-full w-full min-w-0"
-            >
-              <BlogCard blog={blog} />
-            </AnimatedSection>
-          ))}
-        </div>
-        <AnimatedText delay={0.4} className="flex justify-center">
-          <Link href="/blogs">
             <Button variant={"outline"} className="rounded-xl">
               <Icons.chevronDown className="mr-2 h-4 w-4" /> View All
             </Button>

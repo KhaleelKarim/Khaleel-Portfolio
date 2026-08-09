@@ -1,40 +1,52 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// This is the single source of truth for your identity.
+// Almost every page pulls from here — change it once, it updates everywhere.
+// Anything marked TODO still needs a real value.
+// ─────────────────────────────────────────────────────────────────────────────
+
 export const siteConfig = {
-  name: "Naman Barkiya - Applied AI Engineer",
-  authorName: "Naman Barkiya",
-  username: "namanbarkiya",
+  /** Shown in the browser tab and as the default page title. */
+  name: "Khaleel Karim - Data Scientist",
+  /** Shown in the site header and used in SEO metadata. */
+  authorName: "Khaleel Karim",
+  /** Your GitHub handle. Also used for the byline on project pages. */
+  username: "KhaleelKarim",
+  /** The blurb Google and social previews show. Aim for 150-160 characters. */
   description:
-    "Naman Barkiya - Applied AI Engineer working at the intersection of AI, data, and scalable software systems. Explore my projects, experience, and contributions in software development and AI.",
-  url: "https://nbarkiya.xyz",
+    "Khaleel Karim - B.S. Data Science at UC San Diego. Machine learning and statistical modeling, from SQL pipelines over 200K+ records to transformer and LSTM architectures.",
+  /** TODO: replace with your real domain once deployed (e.g. a Vercel URL). */
+  url: "https://khaleel-portfolio.vercel.app",
   links: {
-    twitter: "https://x.com/namanbarkiya",
-    github: "https://github.com/namanbarkiya",
-    templateRepo: "https://github.com/namanbarkiya/minimal-next-portfolio",
+    github: "https://github.com/KhaleelKarim",
+    linkedin: "https://www.linkedin.com/in/khaleel-karim-9a08a5308/",
   },
-  ogImage:
-    "https://res.cloudinary.com/dvt5vkfwz/image/upload/v1767384721/naman_portfolio_og_image.png",
-  iconIco:
-    "https://res.cloudinary.com/dbfvcn3f6/image/upload/v1692357384/assets/naman-favicon.ico",
-  logoIcon:
-    "https://res.cloudinary.com/dbfvcn3f6/image/upload/v1692357294/assets/naman-logo.png",
+  /** TODO: the preview image shown when the site is shared on social media (1200x630). */
+  ogImage: "/logo.png",
+  /** TODO: your own favicon and logo. */
+  iconIco: "/favicon.ico",
+  logoIcon: "/logo.png",
+  /** Terms you want to be findable by in search engines. */
   keywords: [
-    "Naman Barkiya",
-    "Applied AI Engineer",
-    "AI Engineer",
-    "Software Engineer",
-    "Full Stack Developer",
+    "Khaleel Karim",
+    "Data Scientist",
+    "Data Science",
+    "UC San Diego",
+    "UCSD",
     "Machine Learning",
-    "Data Engineering",
-    "UBS",
-    "Python Developer",
-    "React Developer",
-    "Next.js Developer",
-    "TypeScript",
-    "Databricks",
-    "AI Startups",
-    "Software Development",
-    "Web Developer",
-    "Backend Developer",
-    "Frontend Developer",
-    "Tech Portfolio",
+    "Deep Learning",
+    "Statistical Modeling",
+    "Data Analysis",
+    "Python",
+    "SQL",
+    "Pandas",
+    "NumPy",
+    "PyTorch",
+    "TensorFlow",
+    "scikit-learn",
+    "LSTM",
+    "Transformers",
+    "NLP",
+    "Data Visualization",
+    "Portfolio",
   ],
 };

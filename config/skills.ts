@@ -3,161 +3,109 @@ import { Icons } from "@/components/common/icons";
 export interface skillsInterface {
   name: string;
   description: string;
+  /** 1-5. Drives the star display and the sort order below. */
   rating: number;
   icon: any;
 }
 
+// ─────────────────────────────────────────────────────────────────────────────
+// Every skill here is backed by something on your resume — that's deliberate,
+// since interviewers ask about whatever is listed.
+//
+// TODO: sanity-check the ratings. They're inferred from how central each tool
+// was to your work, not from anything you told me.
+//
+// To add a skill, see the 3-step note in config/constants.ts.
+// ─────────────────────────────────────────────────────────────────────────────
+
 export const skillsUnsorted: skillsInterface[] = [
   {
-    name: "Next.js",
+    name: "Python",
     description:
-      "Effortlessly build dynamic apps with routing, layouts, loading UI, and API routes.",
+      "The through-line of every role and project — simulations, modeling, pipelines, and analysis.",
     rating: 5,
-    icon: Icons.nextjs,
+    icon: Icons.python,
   },
   {
-    name: "React",
+    name: "SQL",
     description:
-      "Craft interactive user interfaces using components, state, props, and virtual DOM.",
-    rating: 5,
-    icon: Icons.react,
-  },
-  {
-    name: "GraphQL",
-    description:
-      "Fetch data precisely with a powerful query language for APIs and runtime execution.",
+      "Built pipelines capturing and structuring 200K+ rows of user interaction data into analysis-ready datasets.",
     rating: 4,
-    icon: Icons.graphql,
+    icon: Icons.postgresql,
   },
   {
-    name: "Nest.js",
+    name: "PyTorch",
     description:
-      "Create scalable and modular applications with a progressive Node.js framework.",
+      "Trained an LSTM forecasting model to a 1% error rate and refactored a GPT model for a 9x speedup.",
     rating: 4,
-    icon: Icons.nestjs,
+    icon: Icons.pytorch,
   },
   {
-    name: "express.js",
+    name: "NumPy",
     description:
-      "Build web applications and APIs quickly using a fast, unopinionated Node.js framework.",
-    rating: 5,
-    icon: Icons.express,
+      "Vectorized numerical computing behind 3.6 million parallelized statistical simulations.",
+    rating: 4,
+    icon: Icons.numpy,
   },
   {
-    name: "Node.js",
+    name: "Pandas",
     description:
-      "Run JavaScript on the server side, enabling dynamic and responsive applications.",
-    rating: 5,
-    icon: Icons.nodejs,
+      "Cleaning, reshaping, and exploring tabular data — the first step in most analysis I do.",
+    rating: 4,
+    icon: Icons.pandas,
   },
   {
-    name: "MongoDB",
+    name: "scikit-learn",
     description:
-      "Store and retrieve data seamlessly with a flexible and scalable NoSQL database.",
-    rating: 5,
-    icon: Icons.mongodb,
+      "Trained and tuned a Random Forest classifier to an F1-score of 86% on recipe rating prediction.",
+    rating: 4,
+    icon: Icons.scikitlearn,
   },
   {
-    name: "Typescript",
+    name: "Plotly",
     description:
-      "Enhance JavaScript with static types, making code more understandable and reliable.",
-    rating: 5,
+      "Interactive visualizations for comparing estimation methods and communicating findings in research reviews.",
+    rating: 4,
+    icon: Icons.plotly,
+  },
+  {
+    name: "Matplotlib",
+    description:
+      "Static figures for benchmarking results and weekly research findings reviews.",
+    rating: 4,
+    icon: Icons.matplotlib,
+  },
+  {
+    name: "TensorFlow",
+    description:
+      "Designed and trained an NLP model that generates original song lyrics from a short prompt.",
+    rating: 3,
+    icon: Icons.tensorflow,
+  },
+  {
+    name: "TypeScript",
+    description:
+      "Built production data visualization widgets for a cloud platform serving 10,000+ enterprise customers.",
+    rating: 3,
     icon: Icons.typescript,
-  },
-  {
-    name: "Javascript",
-    description:
-      "Create interactive and dynamic web experiences with the versatile scripting language.",
-    rating: 5,
-    icon: Icons.javascript,
-  },
-  {
-    name: "HTML 5",
-    description:
-      "Structure web content beautifully with the latest version of HyperText Markup Language.",
-    rating: 4,
-    icon: Icons.html5,
-  },
-  {
-    name: "CSS 3",
-    description:
-      "Style web pages creatively with the latest iteration of Cascading Style Sheets.",
-    rating: 4,
-    icon: Icons.css3,
-  },
-  {
-    name: "React Native",
-    description:
-      "Develop cross-platform mobile apps using React for consistent and engaging experiences.",
-    rating: 4,
-    icon: Icons.react,
   },
   {
     name: "Angular",
     description:
-      "Build dynamic web apps with a TypeScript-based open-source framework by Google.",
+      "Component architecture for KPI cards and heatmap widgets on AVEVA's CONNECT platform.",
     rating: 3,
     icon: Icons.angular,
   },
   {
-    name: "Redux",
+    name: "Git",
     description:
-      "Manage app state effectively using a predictable and centralized state container.",
-    rating: 4,
-    icon: Icons.redux,
-  },
-  {
-    name: "Socket.io",
-    description:
-      "Enable real-time, bidirectional communication between clients and servers effortlessly.",
+      "Version control and collaborative workflows on a shared production SaaS codebase.",
     rating: 3,
-    icon: Icons.socketio,
-  },
-  {
-    name: "Material UI",
-    description:
-      "Create stunning and responsive UIs with a popular React UI framework.",
-    rating: 4,
-    icon: Icons.mui,
-  },
-
-  {
-    name: "Tailwind CSS",
-    description:
-      "Design beautiful, modern websites faster with a utility-first CSS framework.",
-    rating: 5,
-    icon: Icons.tailwindcss,
-  },
-  {
-    name: "AWS",
-    description:
-      "Utilize Amazon Web Services to build and deploy scalable, reliable, and secure applications.",
-    rating: 3,
-    icon: Icons.amazonaws,
-  },
-  {
-    name: "Bootstrap",
-    description:
-      "Quickly create responsive and appealing web designs using a popular CSS framework.",
-    rating: 2,
-    icon: Icons.bootstrap,
-  },
-  {
-    name: "MySQL",
-    description:
-      "Manage and organize relational databases efficiently for data-driven applications.",
-    rating: 2,
-    icon: Icons.mysql,
-  },
-  {
-    name: "Netlify",
-    description:
-      "Manage and organize relational databases efficiently for data-driven applications.",
-    rating: 4,
-    icon: Icons.netlify,
+    icon: Icons.git,
   },
 ];
 
+// Sorted strongest-first, so the homepage shows what you're best at.
 export const skills = skillsUnsorted
   .slice()
   .sort((a, b) => b.rating - a.rating);

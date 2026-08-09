@@ -8,78 +8,63 @@ type PagesConfig = {
       title: string;
       description: string;
     };
-    // featuredDescription: string;
   };
 };
 
+// `title` and `description` are the heading and subheading shown at the top of
+// each page. The `metadata` pair is what search engines display instead.
+//
+// NOTE: the keys below must exactly match the ValidPages list in constants.ts.
+// Adding or removing a page here means editing that file too.
 export const pagesConfig: PagesConfig = {
   home: {
     title: "Home",
-    description: "Welcome to my portfolio website.",
+    description: "Welcome to my portfolio.",
     metadata: {
       title: "Home",
-      description: "Naman Barkiya's portfolio website.",
+      description: "Khaleel Karim's data science portfolio.",
     },
   },
   skills: {
     title: "Skills",
-    description: "Key skills that define my professional identity.",
+    description: "The tools and techniques I work with.",
     metadata: {
       title: "Skills",
       description:
-        "Naman Barkiya's key skills that define his professional identity.",
+        "Khaleel Karim's technical skills across machine learning, analytics, and data engineering.",
     },
   },
   projects: {
     title: "Projects",
-    description: "Showcasing impactful projects and technical achievements.",
+    description: "Data science projects and technical work.",
     metadata: {
       title: "Projects",
-      description: "Naman Barkiya's projects in building web applications.",
+      description:
+        "Khaleel Karim's data science projects, from analysis to machine learning.",
     },
   },
   contact: {
     title: "Contact",
-    description: "Let's connect and explore collaborations.",
+    description: "Let's connect.",
     metadata: {
       title: "Contact",
-      description: "Contact Naman Barkiya.",
-    },
-  },
-  contributions: {
-    title: "Contributions",
-    description: "Open-source contributions and community involvement.",
-    metadata: {
-      title: "Contributions",
-      description:
-        "Naman Barkiya's open-source contributions and community involvement.",
+      description: "Get in touch with Khaleel Karim.",
     },
   },
   resume: {
     title: "Resume",
-    description: "Naman Barkiya's resume.",
+    description: "Khaleel Karim's resume.",
     metadata: {
       title: "Resume",
-      description: "Naman Barkiya's resume.",
-    },
-  },
-  blogs: {
-    title: "Blogs",
-    description:
-      "Thoughts on AI, software engineering, and building in public.",
-    metadata: {
-      title: "Blogs",
-      description:
-        "Naman Barkiya's blog — thoughts on AI, software engineering, and building in public.",
+      description: "Khaleel Karim's resume.",
     },
   },
   experience: {
     title: "Experience",
-    description: "Professional journey and career timeline.",
+    description: "Where I've worked and what I did there.",
     metadata: {
       title: "Experience",
-      description:
-        "Naman Barkiya's professional journey and experience timeline.",
+      description: "Khaleel Karim's work experience and career timeline.",
     },
   },
 };

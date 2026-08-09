@@ -41,6 +41,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       <div className="absolute bottom-4 right-4 p-3 rounded-full bg-background border border-border hidden md:block">
         {project.type === "Personal" ? (
           <Icons.userFill className="h-4 w-4" />
+        ) : project.type === "Academic" ? (
+          <Icons.academic className="h-4 w-4" />
+        ) : project.type === "Hackathon" ? (
+          <Icons.hackathon className="h-4 w-4" />
         ) : (
           <Icons.work className="h-4 w-4" />
         )}

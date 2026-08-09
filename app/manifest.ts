@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Naman Barkiya | Applied AI Engineer",
-    short_name: "Naman Barkiya",
+    name: "Khaleel Karim | Data Scientist",
+    short_name: "Khaleel Karim",
     description:
-      "Naman Barkiya - Applied AI Engineer working at the intersection of AI, data, and scalable software systems.",
+      "Khaleel Karim - Data Science student at UC San Diego, building projects across machine learning, analytics, and data engineering.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",
@@ -25,11 +25,10 @@ export default function manifest(): MetadataRoute.Manifest {
     ],
     categories: [
       "portfolio",
-      "ai",
-      "software engineering",
+      "data science",
       "machine learning",
-      "developer",
-      "web development",
+      "analytics",
+      "statistics",
     ],
     lang: "en",
     dir: "ltr",
