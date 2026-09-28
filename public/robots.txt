@@ -4,4 +4,4 @@ Allow: /
 
 # Sitemap location
 # TODO: update this if you deploy to a custom domain.
-Sitemap: https://khaleel-portfolio.vercel.app/sitemap.xml
+Sitemap: https://khaleel-portfolio-cyan.vercel.app/sitemap.xml

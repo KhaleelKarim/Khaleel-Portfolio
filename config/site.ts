@@ -15,7 +15,7 @@ export const siteConfig = {
   description:
     "Khaleel Karim - B.S. Data Science at UC San Diego. Machine learning and statistical modeling, from SQL pipelines over 200K+ records to transformer and LSTM architectures.",
   /** TODO: replace with your real domain once deployed (e.g. a Vercel URL). */
-  url: "https://khaleel-portfolio.vercel.app",
+  url: "https://khaleel-portfolio-cyan.vercel.app",
   links: {
     github: "https://github.com/KhaleelKarim",
     linkedin: "https://www.linkedin.com/in/khaleel-karim-9a08a5308/",
