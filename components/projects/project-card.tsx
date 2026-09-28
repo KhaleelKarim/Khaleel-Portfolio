@@ -31,7 +31,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <div className="flex gap-2 flex-wrap">
           <ChipContainer textArr={project.category} />
         </div>
-        <Link href={`/projects/${project.id}`} className="mt-auto">
+        <Link
+          href={project.readMoreLink ?? `/projects/${project.id}`}
+          target={project.readMoreLink ? "_blank" : undefined}
+          rel={project.readMoreLink ? "noopener noreferrer" : undefined}
+          className="mt-auto"
+        >
           <Button variant={"default"} className="mt-2 w-full sm:w-auto">
             Read more
             <Icons.chevronRight className="w-4 ml-1" />

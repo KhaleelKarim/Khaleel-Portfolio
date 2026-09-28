@@ -24,6 +24,11 @@ export interface ProjectInterface {
   /** One or two sentences — this is all that shows on the card. */
   shortDescription: string;
   websiteLink?: string;
+  /**
+   * Optional. If set, the "Read more" button on the project card opens this
+   * URL in a new tab instead of the project's page on this site.
+   */
+  readMoreLink?: string;
   githubLink?: string;
   /** Must be values from the ValidSkills list in constants.ts. */
   techStack: ValidSkills[];
@@ -75,6 +80,7 @@ export const Projects: ProjectInterface[] = [
   },
   {
     id: "recipe-data-analysis",
+    readMoreLink: "https://khaleelkarim.github.io/recipe_analysis/",
     companyName: "Recipe Data Analysis",
     type: "Academic",
     category: ["Data Analysis", "Machine Learning", "Visualization"],
