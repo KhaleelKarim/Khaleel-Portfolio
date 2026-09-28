@@ -95,7 +95,7 @@ export const Projects: ProjectInterface[] = [
         title: "Exploratory Analysis",
         description:
           "TODO: add plots showing the relationships found between preparation time, step count, and nutrition.",
-        imgArr: ["/logo.png"],
+        imgArr: ["/projects/recipe-data-analysis/cover.png"],
       },
     ],
     descriptionDetails: {
