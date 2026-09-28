@@ -89,7 +89,7 @@ export const Projects: ProjectInterface[] = [
     techStack: ["Python", "Pandas", "NumPy", "scikit-learn", "Plotly"],
     startDate: new Date("2025-03-01"),
     endDate: new Date("2025-03-01"),
-    companyLogoImg: "/logo.png",
+    companyLogoImg: "/projects/recipe-data-analysis/cover.png",
     pagesInfoArr: [
       {
         title: "Exploratory Analysis",
